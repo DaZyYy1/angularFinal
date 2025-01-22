@@ -1,0 +1,53 @@
+<app-header></app-header>
+
+<div class="dashboard">
+    <div class="dashboard-inner">
+        <div class="box div1">
+            <div class="text">
+                <ul>
+                    <h5>Total Sales</h5>
+                    <p>THIS MONTH</p>
+                </ul>
+                <h3>$ 4,235</h3>
+            </div>
+            <div class="img"></div>
+        </div>
+        <div class="box div2">
+            <div class="text">
+                <ul>
+                    <h5>Customers</h5>
+                    <p>THIS MONTH</p>
+                </ul>
+                <h3>{{customerLength}}</h3>
+            </div>
+            <div class="img"></div>
+        </div>
+        <div class="box div3">
+            <div class="text">
+                <ul>
+                    <h5>Orders</h5>
+                    <p>Monthly GOALS : {{monthlyGoal}}</p>
+                </ul>
+                <h3>{{ordersLength}}</h3>
+            </div>
+            <p>{{monthlyGoal - ordersLength > 0 ? monthlyGoal - ordersLength  + ' left' : "Congratulations you reached your goal!"}}</p>
+            <mat-progress-bar mode="determinate" value="{{ordersLength / monthlyGoal * 100}}"></mat-progress-bar>
+        </div>
+        <div class="box div4">
+            <div class="title">
+                <h5>Best Selling</h5>
+                <p>THIS MONTH</p>
+            </div>
+            <div class="content">
+                <h3>$2,400 - <span>Total Sales</span></h3>
+                <ul>
+                    <li>Classic Monochrome Tees —  $940 Sales</li>
+                    <li>Monochromatic Wardrobe —  $790 Sales</li>
+                    <li>Essential Neutrals —  $740 Sales</li>
+                </ul>
+            </div>
+        </div>
+        <div class="box div5"></div>
+    </div>
+</div>
+<app-left-bar></app-left-bar>

@@ -1,0 +1,168 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem;
+    font-family: 'Arial', sans-serif;
+    background-color: white;
+  }
+  
+  .head{
+    color: #5C5F6A;
+    font-family:var(--font-inter);
+    text-align: left;
+    margin: auto;
+    height: 50px;
+    margin-top: 25px;
+    margin-left: 450px;
+    align-items: center;
+  }
+  
+  .login-box {
+    max-width: 400px;
+    width: 100%;
+    background: #fff;
+    padding: 2rem;    
+  }
+  
+  .google-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #fff;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .google-login img {
+    height: 20px;
+    margin-right: 10px;
+  }
+  
+  .divider {
+    display: flex;
+    align-items: center;
+    margin: 1.5rem 0;
+    color: #757575;
+    font-size: 0.8rem;
+  }
+  
+  .divider span:first-child,
+  .divider span:last-child {
+    flex: 1;
+    height: 1px;
+    background-color: #ddd;
+  }
+  
+  .divider span:nth-child(2) {
+    margin: 0 0.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #333;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .loginError {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+  }
+  
+  .forgot-password {
+    text-align: right;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+  
+  .forgot-password a {
+    color: #007bff;
+    text-decoration: none;
+  }   
+  .signup-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .signup-link a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  .name{
+    display: flex;
+    flex-direction: column;
+  }
+  .email{
+    display: flex;
+    flex-direction: column;
+  }
+  .password{
+    display: flex;
+    flex-direction: column;
+  }
+  .inputName{
+    width: 320px;
+    height: 40px;
+    border: 1px solid rgb(211, 211, 211);
+    border-radius: 5px;
+  }
+  .inputEmail{
+    width: 320px;
+    height: 40px;
+    border: 1px solid rgb(211, 211, 211);
+    border-radius: 5px;
+  }
+  .inputPassword{
+    width: 320px;
+    height: 40px;
+    border: 1px solid rgb(211, 211, 211);
+    border-radius: 5px;
+  }
+  form{
+    font-family: var(--font-inter);
+    padding: 10px;
+  }
+  .loginform{
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+  }
+  button{
+    background-color: #0E1422;
+    color: #FFFFFF;
+    width: 300px;
+    height: 40px;
+    border-radius: 2px;
+    transition:transform 0.3s ease;
+  }
+  button:hover{
+    transform: translateY(5px)
+
+  }
+ .button{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+ }
+  

@@ -1,0 +1,15 @@
+<header>
+    <div class="container">
+        <div class="header-inner">
+            <p>
+                <ng-container *ngFor="let part of words; let i = index">
+                    <span *ngIf="i < words.length - 1">{{ part }}</span>
+                    <span *ngIf="i === words.length - 1" class="highlight">{{ part }}</span>
+                    <ng-container *ngIf="i < words.length - 1"> > </ng-container>
+                  </ng-container>
+            </p>
+
+            <img (click)="logOut()" src="./admin/Logout.svg" alt="Log out">
+        </div>
+    </div>
+</header>

@@ -1,0 +1,42 @@
+.header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color:#ffff;   
+}
+.header-inner{
+    width: 100%;
+    height: 84px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.blackbar{
+    width: 100%;
+    height: 2vh;
+    color: white;
+    background-color: black;
+    text-align: center;
+    font-family:var(--font-inter);
+    font-size: small;
+}
+.logo{
+    background-image: url(../../../../../../public/user/Header.svg);
+    width: 163px;
+    height: 40px;
+}
+nav ul{
+    display: flex;
+    justify-content: center;
+    gap: 6%;
+}
+nav ul li{
+  list-style: none;
+}
+nav ul li a{
+    color: #5C5F6A;
+    font-family: var(--font-inter);
+    transition: transform 0.3s ease;
+}
+

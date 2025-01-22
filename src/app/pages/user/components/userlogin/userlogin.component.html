@@ -1,0 +1,50 @@
+<app-header></app-header>
+<div class="head">
+    <span>Ecommerce</span> &gt; <span>Login</span>
+  </div>
+<div class="login-container">
+    <div class="login-box">
+      <button class="google-login">
+        <img src="./user/Google.svg" alt="Google Logo" />
+        Continue with Google
+      </button>
+      <div class="divider">
+        <span></span> <span>OR</span> <span></span>
+      </div>
+      <div class="userLogin">
+        <form [formGroup]="loginForm">
+            <div class="loginform"> 
+                <div class="email">
+                    <label for="email">Email</label>
+                    <br>
+                    <input type="email" class="inputEmail" placeholder="Enter Your Email" formControlName="email" required>
+                    <div class="loginError" *ngIf="loginForm.get('email')?.touched">
+                        <span *ngIf="loginForm.get('email')?.errors?.['required']">Email is required!</span>
+                        <span *ngIf="loginForm.get('email')?.errors?.['email']">Email is incorrect</span>
+                    </div>
+                </div>
+                <div class="password">
+                    <label for="password">Password</label>
+                    <br>
+                    <input type="password" class="inputPassword" placeholder="Enter your password" formControlName="password" required>
+                    <div class="loginError" *ngIf="loginForm.get('password')?.touched">
+                        <span *ngIf="loginForm.get('password')?.errors?.['required']">password is required!</span>
+                        <span *ngIf="loginForm.get('password')?.errors?.['minlength']">password is incorrect</span>
+                    </div>
+                </div>
+            </div>
+            <div class="button">
+                <button (click)="onSubmit()">
+                    Login
+                </button>
+            </div>
+            
+      </form>
+  
+      <div class="signup-link">
+        Don’t have an account? <a href="user/signup">Sign up</a>
+      </div>
+    </div>
+  </div>
+</div>
+  <app-footer></app-footer>

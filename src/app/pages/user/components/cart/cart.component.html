@@ -1,0 +1,35 @@
+<app-header></app-header>
+<div class="whole_cont">
+  <div class="cart-container">
+    <div class="cart_component" *ngFor="let item of cartItems">
+      <img [src]="item.img" alt="" width="100px" height="100px">
+      <br>
+      <br>
+      <div class="body">
+        <div class="information">
+          <h1>{{item.title}}</h1>
+          <div class="butom">
+            <p>Size:{{item.size}}</p>---
+            <div class="colors">
+              <p>color:</p>
+              <div [ngStyle]="{'background-color': item.color, 'width': '10px', 'height': '10px', 'border-radius': '50%'}"></div>
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          <h2>{{item.price}}$</h2>
+          <div class="counter">
+            <button (click)="decrement(item)">-</button>
+            <span>{{ item.quantity }}</span>
+            <button (click)="increment(item)">+</button>
+          </div>
+           <button type="button" class="trash-button" (click)="removeItem(item.id)">x</button>
+        </div>
+        </div>  
+      </div>
+      
+  </div>
+  <app-totalprice></app-totalprice>
+</div>
+
+  <app-footer></app-footer>

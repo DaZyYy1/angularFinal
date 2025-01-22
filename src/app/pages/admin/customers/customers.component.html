@@ -1,0 +1,42 @@
+<app-header></app-header>
+
+<div class="customers">
+    <div class="customers-inner">
+        <div class="search">
+            <h4>Customers</h4>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Search orders" #input>
+        </div>
+
+        <table mat-table [dataSource]="dataSource" matSort >
+            <ng-container matColumnDef="img">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Image </th>
+              <td mat-cell *matCellDef="let customer">
+                {{customer.name}}
+              </td>
+            </ng-container>
+        
+            <ng-container matColumnDef="Name">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+              <td mat-cell *matCellDef="let customer"> {{ customer.name }} </td>
+            </ng-container>
+    
+            <ng-container matColumnDef="Email">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+              <td mat-cell *matCellDef="let customer"> {{ customer.email }} </td>
+            </ng-container>
+        
+            <ng-container matColumnDef="Shipping Address">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Shipping Address </th>
+              <td mat-cell *matCellDef="let customer"> ${{ customer.address }} </td>
+            </ng-container>
+    
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+
+          <mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons />
+    </div>
+</div>
+
+<app-left-bar></app-left-bar>

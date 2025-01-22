@@ -1,0 +1,36 @@
+<app-header></app-header>
+
+<div class="settings">
+    <div class="settings-inner">
+        <h4>Settings</h4>
+        <form [formGroup]="settings">
+            <li>
+                <p>Site name</p>
+                <input type="text" formControlName="siteName">
+                <ng-container *ngIf="settings.get('siteName')?.touched">
+                    <p *ngIf="settings.get('siteName')?.errors?.['minlength']">
+                        minlength of sitename is 6!
+                    </p>
+                </ng-container>
+            </li>
+            <li>
+                <p>Support Email</p>
+                <input type="text" formControlName="supportEmail">
+                <ng-container *ngIf="settings.get('supportEmail')?.touched">
+                    <p *ngIf="settings.get('supportEmail')?.errors?.['email']">
+                        Email is Invalid!
+                    </p>
+                </ng-container>
+            </li>
+            <li>
+                <p>Monthly Order Goal</p>
+                <input type="number" formControlName="monthlyGoal" min="0">
+            </li>
+
+            <button (click)="onSubmit()">save changes</button>
+        </form>
+    </div>
+
+</div>
+
+<app-left-bar></app-left-bar>

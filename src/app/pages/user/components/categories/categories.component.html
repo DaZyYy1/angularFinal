@@ -1,0 +1,27 @@
+<app-header></app-header>
+<div class="head">
+  <p>Ecommerce > Search</p>
+</div>
+<div class="fullhomepage">
+    <div class="conteiner">
+    <div class="product-list">
+        <div class="product-card"  *ngFor="let product of paginatedProducts" (click)="addToCart(product)" >
+          <img [src]="product.img" alt="Product Image" class="img">
+          <h3>{{ product.title }}</h3>
+          <div class="pricetag">
+            <p class="stock" [class.in-stock]="product.stock" [class.out-of-stock]="!product.stock">
+              {{ product.stock ? 'IN STOCK' : 'OUT OF STOCK' }}
+            </p>
+            <p class="price">$ {{ product.price }}</p>
+          </div>
+        </div>
+    </div>
+</div>
+<app-pagination 
+  [totalPages]="Math.ceil(products.length / itemsPerPage)" 
+  [currentPage]="currentPage" 
+  (pageChanged)="onPageChange($event)">
+</app-pagination>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,70 @@
+.adminLogin{
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: var(--font-inter);
+}
+
+.adminLogin>form{
+    width: 385px;
+    height: 455px;
+    box-shadow: 0px 0px 40px -25px rgba(0,0,0,0.75);
+    border-radius: 5px;
+    padding: 35px;
+}
+
+.adminLogin>form>.logo{
+    margin: auto;
+    width: 115px;
+    height: 40px;
+    background: url("./../../../../../public/logo.svg");
+    margin-bottom: 70px;
+
+}
+
+.adminLogin>form>li{
+    width: 100%;
+}
+
+.adminLogin>form>li:first-of-type{
+    margin-bottom: 15px;
+}
+
+.adminLogin>form>li>.loginError{
+    margin-top: 5px;
+}
+
+.adminLogin>form>li>.loginError>span{
+    color: var(--semantic-red-color);
+}
+
+.adminLogin>form>li>input{
+    width: 100%;
+    height: 45px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    font-size: 17px;
+    padding-left: 5px;
+}
+
+.adminLogin>form>button{
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 40px;
+    background-color: var(--neutral-color);
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all ease 0.3s;
+}
+
+.adminLogin>form>button:disabled{
+    background-color: #40485a;
+    cursor: not-allowed;
+}

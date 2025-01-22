@@ -1,0 +1,23 @@
+.error{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f6f6f6;
+}
+
+.error-img{
+    width: 1000px;
+    height: 500px;
+    background-image: url("../../../../public/error/error.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.error h1{
+    font-family: var(--font-inter);
+    color: var(--semantic-blue-color);
+}

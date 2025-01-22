@@ -1,0 +1,102 @@
+<app-header></app-header>
+<div class="fresharivals">
+<div class="left">
+    <div class="text">
+    <h1>Fresh Arrivals Online</h1>
+    <p>Discover Our Newest Collection Today</p>
+    </div>
+    <div class="button">
+        <button class="viewcoll">View Collection -></button>
+    </div>
+   
+</div>
+<div class="imgman">
+    <div class="circle"></div>
+    <img src="./user/HeroImage.svg" alt="" width="300px" class="img">
+    </div>
+</div>
+<div class="whitebg">
+    <div class="featuress">
+        <div class="featuresItem">
+            <img src="./user/IconBox.svg" alt="">
+            <h5>Free Shipping</h5>
+            <p>Upgrade your style today and get FREE <br>
+                shipping on all orders! Don't miss out.</p>
+        </div>
+        <div class="featuresItem">
+            <img src="./user/IconBox-1.svg" alt="">
+            <h5>Satisfaction Guarantee</h5>
+            <p>Shop confidently with our Satisfaction <br>
+                Guarantee: Love it or get a refund.</p>
+        </div>
+        <div class="featuresItem">
+            <img src="./user/IconBox-2.svg" alt="">
+            <h5>Free Shipping</h5>
+            <p>UYour security is our priority. Your <br>
+                payments are secure with us.</p>
+        </div>
+    </div>
+    <div class="best-selling">
+        <section class="best-selling">
+            <h2 class="section-subtitle">SHOP NOW</h2>
+            <h1 class="section-title">Best Selling</h1>
+            <div class="product-grid">
+              <div class="product-card" *ngFor="let product of getFourProduct" (click)="addToCart(product)">
+               <img  [src]="product.img" alt="Product Image"> 
+                <h3 class="product-name">{{product.title}}</h3>
+                <div class="product-details">
+                  <span class="product-badge" >{{ product.stock ? 'IN STOCK' : 'OUT OF STOCK' }}</span>
+                  <span class="product-price">\${{ product.price }}</span>
+                </div>
+              </div>
+            </div>
+          </section>
+    </div>
+</div>
+ 
+      <div class="fresharivals">
+        <div class="left">
+            <div class="text">
+            <h1>Fresh Arrivals Online</h1>
+            <p>Discover Our Newest Collection Today</p>
+            </div>
+            <div class="button">
+                <button class="viewcoll">View Collection -></button>
+            </div>
+        </div>
+        <div class="imgman">
+            <div class="circle"></div>
+            <img src="./user/CategoryImage.svg" alt="" width="300px" class="img">
+            </div>
+        </div>
+        <div class="whitebg">
+            <div class="best-selling">
+                <section class="best-selling">
+                    <div>
+                        <button 
+                          [ngClass]="{'active': activeButton === 'featured'}" 
+                          (click)="setActiveButton('featured')">
+                          Featured
+                        </button>
+                      
+                        <button 
+                          [ngClass]="{'active': activeButton === 'latest'}" 
+                          (click)="setActiveButton('latest')">
+                          Latest
+                        </button>
+                      </div>
+                    
+                    <div class="product-grid">
+                      <div class="product-card" *ngFor="let product of getFourProduct" (click)="addToCart(product)">
+                       <img  [src]="product.img" alt="Product Image">
+                        <h3 class="product-name">{{product.title}}</h3>
+                        <div class="product-details">
+                          <span class="product-badge">{{ product.stock ? 'IN STOCK' : 'OUT OF STOCK' }}</span>
+                          <span class="product-price">\${{ product.price }}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+            </div>
+          </div>
+<app-footer></app-footer>

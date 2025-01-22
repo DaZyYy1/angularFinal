@@ -1,0 +1,134 @@
+<app-header />  
+
+<div class="add-product">
+    <div class="add-product-inner">
+        <h4>Add Product</h4>
+
+        <form [formGroup]="addProduct">
+            <div class="form-left">
+              <div class="form-block">
+                <p>Title</p>
+                <input type="text" formControlName="title">
+
+                <div class="error-message" *ngIf="addProduct.get('title')?.touched">
+                  <p *ngIf="addProduct.get('title')?.errors?.['required']">Title is required!</p>
+                  <p *ngIf="addProduct.get('title')?.errors?.['minlength']">Title min length is 3!</p>
+                </div>
+              </div>
+
+              <div class="form-block">
+                <p>price</p>
+                <input type="number" min="0" formControlName="price">
+                <div class="error-message" *ngIf="addProduct.get('price')?.touched">
+                  <p *ngIf="addProduct.get('price')?.errors?.['required']">price is required!</p>
+                  <p *ngIf="addProduct.get('price')?.errors?.['min']">price min is 1!</p>
+                </div>
+              </div>
+
+              <div class="form-block">
+                <p>Category</p>
+                <input type="text" formControlName="category">
+                <div class="error-message" *ngIf="addProduct.get('category')?.touched">
+                  <p *ngIf="addProduct.get('category')?.errors?.['required']">category is required!</p>
+                  <p *ngIf="addProduct.get('category')?.errors?.['minlength']">category min length is 5!</p>
+                </div>
+              </div>
+
+              <div class="form-block">
+                <p>Slug</p>
+                <input type="text" formControlName="slug">
+                <div class="error-message" *ngIf="addProduct.get('slug')?.touched">
+                  <p *ngIf="addProduct.get('slug')?.errors?.['minlength']">slug min length is 4!</p>
+                </div>
+              </div>
+              
+              <div class="form-block">
+                <p>Sku</p>
+                <input type="number" min="0" formControlName="sku">
+                <div class="error-message" *ngIf="addProduct.get('sku')?.touched">
+                  <p *ngIf="addProduct.get('sku')?.errors?.['min']">sku min length is 1000!</p>
+                </div>
+              </div>
+
+              <div class="form-block">
+                <p>Description</p>
+                <textarea name="" id="" formControlName="description"></textarea>
+                <div class="error-message" *ngIf="addProduct.get('description')?.touched">
+                  <p *ngIf="addProduct.get('description')?.errors?.['required']">description is required!</p>
+                  <p *ngIf="addProduct.get('description')?.errors?.['minlength']">description min length is 10!</p>
+                </div>
+              </div>
+
+              <button (click)="onSubmite()">Save product</button>
+            </div>
+
+            <div class="form-right">
+              <div class="form-block">
+                <p>Stock status</p>
+                <select id="" formControlName="stockStatus">
+                  <option value="true">In Stock</option>
+                  <option value="false">Out of Stock</option>
+                </select>
+
+                <div class="error-message" *ngIf="addProduct.get('stockStatus')?.touched">
+                  <p *ngIf="addProduct.get('stockStatus')?.errors?.['required']">Stock status is required!</p>
+                </div>
+              </div>
+
+              <div class="form-block">
+                <p>Available quantity</p>
+                <input type="number" formControlName="quantity">
+
+                <div class="error-message" *ngIf="addProduct.get('quantity')?.touched">
+                  <p *ngIf="addProduct.get('quantity')?.errors?.['required']">quantity is required!</p>
+                  <p *ngIf="addProduct.get('quantity')?.errors?.['min']">quantity's min is 1!</p>
+                </div>
+              </div>
+
+              <div class="form-block">
+                <p>Images</p>
+                <div class="custom-file">
+                  <input type="file" id="fileInput" accept="image/png, image/gif, image/jpeg" hidden>
+                  <label for="fileInput">Upload File</label>
+                </div>
+              </div>
+
+              <div class="form-block" formArrayName="colors">
+                <p>Colors</p>
+                <div class="form-block-color">
+                  <div class="form-block-color" *ngFor="let color of colorOption; let i = index">
+                    <input type="checkbox" [id]="'color' + i" [formControlName]="i"/>
+                    <label [for]="'color' + i" [style.background-color]="color"></label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-block" formArrayName="sizes">
+                <p>sizes</p>
+                <div class="form-block-sizes">
+                  <div *ngFor="let size of sizeOption; let i = index;">
+                    <input type="checkbox" [id]="'size' + i" [formControlName]="i"/>
+                    <label [for]="'size' + i">{{size}}</label>
+                  </div>
+                </div>
+                <!-- <div class="form-block-sizes">
+                  <input type="checkbox" id="checkbox5">
+                  <label for="checkbox5">S</label>
+                  <input type="checkbox" id="checkbox6">
+                  <label for="checkbox6">M</label>
+                  <input type="checkbox" id="checkbox7">
+                  <label for="checkbox7">L</label>
+                  <input type="checkbox" id="checkbox8">
+                  <label for="checkbox8">X</label>
+                  <input type="checkbox" id="checkbox9">
+                  <label for="checkbox9">XL</label>
+                  <input type="checkbox" id="checkbox10">
+                  <label for="checkbox10">XXL</label>
+                </div> -->
+              </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<app-left-bar />

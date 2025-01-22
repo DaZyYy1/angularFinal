@@ -1,0 +1,55 @@
+<app-header></app-header>
+<div class="head">
+    <span>Ecommerce</span> &gt; <span>Login</span>
+  </div>
+<div class="login-container">
+    <div class="login-box">
+      <button class="google-login">
+        <img src="./user/Google.svg" alt="Google Logo" />
+        Continue with Google
+      </button>
+      <div class="divider">
+        <span></span> <span>OR</span> <span></span>
+      </div>
+      <div class="userLogin">
+        <form [formGroup]="signupForm">
+            <div class="signupForm"> 
+                <div class="name">
+                    <label for="name">Name</label>
+                    <br>
+                    <input type="text" class="inputName" placeholder="Enter Your Name" formControlName="name" required>
+                    <div class="loginError" *ngIf="signupForm.get('name')?.touched">
+                      <span *ngIf="signupForm.get('name')?.errors?.['required']">Name is required!</span>
+                      <span *ngIf="signupForm.get('name')?.errors?.['minlength']">Name must be at least 3 characters long.</span>
+                    </div>
+                </div>
+
+                <div class="email">
+                    <label for="email">Email</label>
+                    <br>
+                    <input type="email" class="inputEmail" placeholder="Enter Your Email" formControlName="email" required>
+                    <div class="loginError" *ngIf="signupForm.get('email')?.touched">
+                        <span *ngIf="signupForm.get('email')?.errors?.['required']">Email is required!</span>
+                        <span *ngIf="signupForm.get('email')?.errors?.['email']">Email is incorrect</span>
+                    </div>
+                </div>
+                <div class="password">
+                    <label for="password">Password</label>
+                    <br>
+                    <input type="password" class="inputPassword" placeholder="Enter your password" formControlName="password" required>
+                    <div class="loginError" *ngIf="signupForm.get('password')?.touched">
+                        <span *ngIf="signupForm.get('password')?.errors?.['required']">password is required!</span>
+                        <span *ngIf="signupForm.get('password')?.errors?.['minlength']">password is incorrect</span>
+                    </div>
+                </div>
+            </div>
+            <div class="button">
+                <button (click)="onSubmit()">
+                    Sign Up
+                </button>
+            </div>
+      </form>
+    </div>
+  </div>
+</div>
+  <app-footer></app-footer>

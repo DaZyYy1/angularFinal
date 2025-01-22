@@ -1,0 +1,32 @@
+<div class="totalConteiner">
+     <h1>Order Summery</h1>
+     <div class="info">
+          <div class="subTotal">
+               <p>Subtotal</p>
+               <p class="price"  *ngIf="total !== null" >
+                    {{calculateSubTotal()}}$
+               </p>
+          </div>
+          <div class="Shipping">
+               <p>Shipping:</p>
+               <p class="price">Free</p>
+          </div>
+          
+          <div class="deliveryFee">
+               <p>Delivery Fee</p>
+               <p class="price">
+                    {{delfee}}$
+               </p>
+          </div>
+     </div>
+     <div class="Total">
+          <p>Total</p>
+          <p class="price">
+               {{ calculateSubTotal() + delfee }}$
+          </p>
+     </div>
+     <div class="button">
+          <button (click)="changePath()">Go To Checkout</button>
+          <a routerLink="/user/Categories">Continue Shopping</a> 
+     </div>    
+</div>

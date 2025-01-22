@@ -1,0 +1,88 @@
+.orders{
+    width: 100%;
+    height: 100%;
+}
+
+.orders-inner{
+    width: calc(100% - 17% - 25px);
+    height: 100%;
+    margin-top: 70px;
+    float: right;
+    margin-right: 25px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    font-family: var(--font-inter);
+}
+
+.orders-inner .search{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.orders-inner .search input{
+    width: 240px;
+    height: 40px;
+    padding-left: 5px;
+    font-size: 17px;
+}
+
+.orders-inner table{
+    margin-top: 25px;
+    background: #fff;
+}
+
+.orders-inner table td{
+    height: 80px;
+}
+
+.orders-inner table td img{
+    width: 50px;
+    height: 50px;
+    background: #f6f6f6;
+}
+
+table *{
+    font-family: var(--font-inter);
+    color: #5C5F6A;
+}
+
+table th{
+    font-size: 16px;
+}
+
+table td{
+    height: 80px;
+}
+
+table th:first-of-type{
+    width: 60px;
+}
+
+table th:nth-of-type(2){
+    width: 200px;
+}
+
+table th:nth-of-type(3){
+    width: 80px;
+}
+
+
+table th:nth-of-type(4){
+    width: 80px;
+}
+
+table th:nth-of-type(5){
+    width: 100px;
+}
+
+table th:last-of-type{
+    width: 100px;
+}
+
+mat-paginator{
+    background: #fff;
+}

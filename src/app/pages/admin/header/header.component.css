@@ -1,0 +1,33 @@
+header{
+    position: fixed;
+    width: calc(100% - 17%);
+    height: 50px;
+    top: 0;
+    right: 0;
+    background-color: #f6f6f6;
+    z-index: 99;
+}
+
+.header-inner{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-family: var(--font-inter);
+    font-size: 18px;
+
+    justify-content: space-between;
+}
+
+.header-inner p{
+    text-transform: capitalize;
+}
+
+.highlight{
+    font-weight: 500;
+}
+
+.header-inner img{
+    margin-right: 25px;
+    cursor: pointer;
+}

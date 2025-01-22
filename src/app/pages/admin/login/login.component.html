@@ -1,0 +1,22 @@
+<div class="adminLogin">
+    <form [formGroup]="adminLogin">
+        <div class="logo"></div>
+        <li>
+            <p>Email</p>
+            <input type="email" formControlName="email">
+            <div class="loginError" *ngIf="adminLogin.get('email')?.touched">
+                <span *ngIf="adminLogin.get('email')?.errors?.['required']">Email is required!</span>
+                <span *ngIf="adminLogin.get('email')?.errors?.['email']">Email is incorrect</span>
+            </div>
+        </li>
+        <li>
+            <p>Password:</p>
+            <input type="password" formControlName="password">
+            <div class="loginError" *ngIf="adminLogin.get('password')?.touched">
+                <span *ngIf="adminLogin.get('password')?.errors?.['required']">Password is required!</span>
+                <span *ngIf="adminLogin.get('password')?.errors?.['minlength']">Password min length is 8!</span>
+            </div>
+        </li>
+        <button (click)="onSubmit()" [disabled]="adminLogin.invalid">Login</button>
+    </form>
+</div>

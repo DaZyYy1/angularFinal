@@ -1,0 +1,127 @@
+
+footer {
+    background-color: #fff;
+    color: #333;
+    padding: 40px 20px;
+    border-top: 1px solid #e5e5e5;
+  }
+  
+  .newsletter {
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .newsletter h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .newsletter p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .newsletter-form input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 300px;
+    height: 44px;
+  }
+  
+  .newsletter-form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 44px;
+  }
+  
+  .newsletter-form button:hover {
+    background-color: #333;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .footer-column {
+    flex: 1;
+    min-width: 150px;
+  }
+  
+  .footer-column h4 {
+    font-size: 14px;
+    color: #878A92;
+    font-family: var(--font-inter);
+    margin-bottom: 15px;
+  }
+  
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-column ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-column ul li a {
+    color:#5C5F6A;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: var(--font-inter); 
+  }
+  
+  .footer-column ul li a:hover {
+    color: #000;
+  }
+  
+  .brand img {
+    margin-right: 10px;
+  }
+  .brand p {
+    font-family: var(--font-inter);
+    color: #5C5F6A;
+  }
+  .brand h3 {
+    font-size: 20px;
+    font-family: var(--font-inter);
+    margin: 10px 0;
+  }
+  
+  .social-icons a img {
+    
+    margin-right: 10px;
+  }
+  
+  .payment-icons img {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+    font-family: var(--font-inter);
+  }

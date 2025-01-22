@@ -1,0 +1,46 @@
+<app-header></app-header>
+
+<div class="orders">
+    <div class="orders-inner">
+        <div class="search">
+            <h4>Orders</h4>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Search orders" #input>
+        </div>
+
+        <table mat-table [dataSource]="datasource" matSort class="mat-elevation-z8">
+            <ng-container matColumnDef="img">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Image</th>
+              <td mat-cell *matCellDef="let order">
+                <img [src]="order.img" alt="{{ order.title }}" width="50" height="50" />
+              </td>
+            </ng-container>
+      
+            <ng-container matColumnDef="title">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Title</th>
+              <td mat-cell *matCellDef="let order">{{ order.title }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+              <td mat-cell *matCellDef="let order">{{ order.id }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="price">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Price</th>
+              <td mat-cell *matCellDef="let order">{{ order.price }}</td>
+            </ng-container>
+      
+            <ng-container matColumnDef="status">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+              <td mat-cell *matCellDef="let order">{{ order.status }}</td>
+            </ng-container>
+      
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+
+          <mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons />
+    </div>
+</div>
+
+<app-left-bar></app-left-bar>

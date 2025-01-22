@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root{
+    --primary-color: #4078FF;
+    --neutral-color: #0E1422;
+    --neutral-black-color: #5C5F6A;
+    --semantic-blue-color: #306CEF;
+    --semantic-green-color: #057234; 
+    --semantic-red-color: #BE1313;
+    --semantic-yellow-color: #F3B40A;
+    --font-inter: "Inter", serif;
+}
+
+body{
+    background-color: #f6f6f6;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: var(--font-inter);
+}
+
+a,li{
+    list-style-type: none;
+    text-decoration: none;
+}
+
+h1{
+    font-size: 40px;
+    font-weight: 600;
+}
+
+h2{
+    font-size: 32px;
+    font-weight: 700;
+}
+
+h3{
+    font-size: 24px;
+    font-weight: 700;
+}
+
+h4{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+h5{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+h6{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+button{
+    cursor: pointer;
+    border: none;
+}
+
+.conteiner{
+    max-width: 1116px;
+    width: 100%;
+    margin: auto;
+}
+.searchbox{
+width: 264px;
+height: 45px;
+text-align: center;
+}
+.icon1{
+    width: 18px;
+    height: 18px;
+}
+.icon2{
+    width: 18px;
+    height: 18px;
+}
+.searchboxmain{
+    display: flex;
+}
+.icons{
+    display: flex;
+    gap: 20px;
+}
+.righside{
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}

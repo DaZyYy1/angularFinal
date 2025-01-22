@@ -1,0 +1,109 @@
+<app-header></app-header>
+<div class="head">
+    <h1>Checkout</h1>
+    <p>Ecommerce > <b>Search</b></p>
+  </div>
+<div id="checkout">
+    <div class="form-container">
+        <form [formGroup]="shippingForm" (ngSubmit)="onSubmit()">
+            <h2 class="form-title">Shipping Address</h2>
+          
+            <div class="form-group">
+              <label for="streetAddress">Street Address</label>
+              <input id="streetAddress" formControlName="streetAddress" type="text">
+              <p *ngIf="shippingForm.get('streetAddress')?.invalid && shippingForm.get('streetAddress')?.touched">
+                Street address is required and must be at least 5 characters.
+              </p>
+            </div>
+          
+            <div class="form-row">
+              <div class="form-group">
+                <label for="city">City</label>
+                <input id="city" formControlName="city" type="text">
+                <p *ngIf="shippingForm.get('city')?.invalid && shippingForm.get('city')?.touched">
+                  City is required.
+                </p>
+              </div>
+              <div class="form-group">
+                <label for="state">State</label>
+                <input id="state" formControlName="state" type="text">
+                <p *ngIf="shippingForm.get('state')?.invalid && shippingForm.get('state')?.touched">
+                  State is required.
+                </p>
+              </div>
+            </div>
+          
+            <div class="form-row">
+              <div class="form-group">
+                <label for="zipCode">Zip Code</label>
+                <input id="zipCode" formControlName="zipCode" type="text">
+                <p *ngIf="shippingForm.get('zipCode')?.invalid && shippingForm.get('zipCode')?.touched">
+                  Zip code must be 5 digits.
+                </p>
+              </div>
+              <div class="form-group">
+                <label for="country">Country</label>
+                <input id="country" formControlName="country" type="text">
+                <p *ngIf="shippingForm.get('country')?.invalid && shippingForm.get('country')?.touched">
+                  Country is required.
+                </p>
+              </div>
+            </div>
+          
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" formControlName="email" type="email">
+                <p *ngIf="shippingForm.get('email')?.invalid && shippingForm.get('email')?.touched">
+                  Enter a valid email address.
+                </p>
+              </div>
+              <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input id="fullName" formControlName="fullName" type="text">
+                <p *ngIf="shippingForm.get('fullName')?.invalid && shippingForm.get('fullName')?.touched">
+                  Full name is required and must be at least 3 characters.
+                </p>
+              </div>
+            </div>
+        </form>
+    </div>
+        <div class="totalConteiner">
+            <h1>Your Order</h1>
+            <div class="imgcheck">
+                <div *ngFor= 'let item of cartItems'>
+                    <img [src]="item.img" alt="">
+                </div>
+            </div>
+            <div class="info">
+                 <div class="subTotal">
+                      <p>Subtotal</p>
+                      <p class="price"  *ngIf="total !== null" >
+                           {{calculateSubTotal()}}$
+                      </p>
+                 </div>
+                 <div class="Shipping">
+                      <p>Shipping:</p>
+                      <p class="price">Free</p>
+                 </div>
+                 
+                 <div class="deliveryFee">
+                      <p>Delivery Fee</p>
+                      <p class="price">
+                           {{delfee}}$
+                      </p>
+                 </div>
+            </div>
+            <div class="Total">
+                 <p>Total</p>
+                 <p class="price">
+                      {{ calculateSubTotal() + delfee }}$
+                 </p>
+            </div>
+            <div class="button">
+                 <button type="submit" class="submit" (click)="onSubmit()">Place Order</button>
+            </div>    
+       </div>
+</div>
+
+<app-footer></app-footer>
