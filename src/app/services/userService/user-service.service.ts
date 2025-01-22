@@ -6,7 +6,7 @@ import { IUser } from '../../interfaces/user.interface';
 })
 export class UserServiceService {
 
-  admin: IUser[] = [
+  user: IUser[] = [
     {
       id: 1,
       email: 'davit.gogoladze@gau.edu.ge',
@@ -21,11 +21,11 @@ export class UserServiceService {
   constructor() { }
 
   getUserByEmail(email: string){
-    return this.admin.find(user => user.email === email);
+    return this.user.find(user => user.email === email);
   }
 
   getUserById(id: number){
-    this.activeUser = this.admin.find(user => user.id === id)
+    this.activeUser = this.user.find(user => user.id === id)
     console.log(typeof(this.activeUser));
   }
 

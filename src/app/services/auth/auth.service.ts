@@ -24,6 +24,49 @@ export class AuthService {
     }
   }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
   adminSignIn(email: string, password: string) {
     const user: IUser | undefined = this.userService.getUserByEmail(email);
     if(user) {
